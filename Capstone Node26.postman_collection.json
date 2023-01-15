@@ -1,0 +1,632 @@
+{
+	"info": {
+		"_postman_id": "0a430ba2-d9a4-49a5-965d-aaad964a21e1",
+		"name": "Capstone Node26",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21433026"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"quyennvcgamer@gmail.com\",\r\n  \"password\": \"123456aA@\",\r\n  \"firstName\": \"user test 2\",\r\n  \"age\": \"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"quyennvcgamer@gmail.com\",\r\n  \"password\": \"123456aA@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get access token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImVtYWlsIjoibnZjcXV5ZW5AZ21haWwuY29tIiwiaWF0IjoxNjcyNzk4OTc4LCJleHAiOjE2ODgzNTA5Nzh9.rybKVprSSEBnoouBr8jcKoV4OHWc37vOXPxfa2JUfOg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit profiile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "quyennvcgamer",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Nguyễn 1",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Quyền 1",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Test giới thiệu 1",
+									"type": "text"
+								},
+								{
+									"key": "personalUrl",
+									"value": "Test personal url 1",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/DELL/Downloads/Front-end_CyberSoft.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Created images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/my-images?lastImageId=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"my-images"
+							],
+							"query": [
+								{
+									"key": "lastImageId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Saved images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/saved-images?lastImageId=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"saved-images"
+							],
+							"query": [
+								{
+									"key": "lastImageId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate link login google",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/generate-google-link",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"generate-google-link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login google",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"provider\": \"google\",\r\n  \"code\": \"4/0AWgavdckFbDhdaf9dOX0Hl1qF2h3SFlfxL4Lx6qKmsJQTF3u-WWWrwWT1jrIbEjceGROUQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/social-login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"social-login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/images",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ảnh 4",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "ảnh 4",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/DELL/Downloads/6360461.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/images",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/images/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/images/1/save",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images",
+								"1",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/images/1/comments?lastCommentId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images",
+								"1",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "lastCommentId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"Sure, please follow me to see more images!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/images/1/comments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/images/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"images",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Social",
+			"item": [
+				{
+					"name": "See profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/social/profile/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"social",
+								"profile",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"followedId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/social/follow",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"social",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Share",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/social/share/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"social",
+								"share",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get feeds",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImVtYWlsIjoicXV5ZW5udmNnYW1lckBnbWFpbC5jb20iLCJpYXQiOjE2NzI3OTg2NjQsImV4cCI6MTY3Mjc5OTU2NH0.hFTpZhg3uviKc95dzj3kMM3cARw_BcAr_TXRZHvhuoE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/social/feeds?lastFeedId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"social",
+								"feeds"
+							],
+							"query": [
+								{
+									"key": "lastFeedId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

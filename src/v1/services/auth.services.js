@@ -321,6 +321,7 @@ module.exports = {
           imageId: {
             [Op.lt]: lastImageId,
           },
+          userId,
         },
         order: [["imageId", "DESC"]],
         limit: LIMIT_IMAGES_QUERY,

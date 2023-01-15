@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { AppError } = require("./error");
 const { TOKEN_CFG } = require("../../../config");
-const BlacklistToken = require("../models/BlacklistToken");
+const BlacklistToken = require("../models/BlackListToken");
 
 const generateToken = (payload, type) => {
   if (!(type == "access" || type == "refresh")) {

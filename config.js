@@ -12,11 +12,7 @@ module.exports = {
       password: process.env.MYSQLPASSWORD,
     },
     redis: {
-      // socket: {
-      //   host: "127.0.0.1",
-      //   port: 6379,
-      // },
-      URL: process.env.REDIS_URL,
+      URL: encodeURI(process.env.REDIS_URL),
     },
   },
   TOKEN_CFG: {

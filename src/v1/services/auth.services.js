@@ -6,7 +6,7 @@ const { generateToken, checkToken } = require("../helpers/jwt");
 const mailer = require("../helpers/mailer");
 const socialProvider = require("../helpers/socialProvider");
 const { isEmail, isPassword } = require("../helpers/validator");
-const BlacklistToken = require("../models/BlacklistToken");
+const BlackListToken = require("../models/BlackListToken");
 const User = require("../models/User");
 const { google } = require("googleapis");
 const response = require("../helpers/response");
@@ -210,13 +210,13 @@ module.exports = {
         const payloadDecode = decode(token);
         if (
           payloadDecode &&
-          !(await BlacklistToken.findOne({
+          !(await BlackListToken.findOne({
             where: {
               token,
             },
           }))
         ) {
-          await BlacklistToken.create({ token, userId: payloadDecode.userId });
+          await BlackListToken.create({ token, userId: payloadDecode.userId });
           let refreshTokens = await redisGet("refreshTokens");
           refreshTokens = refreshTokens ?? {};
           delete refreshTokens[token];

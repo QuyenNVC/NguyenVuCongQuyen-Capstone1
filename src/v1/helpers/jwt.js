@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { AppError } = require("./error");
 const { TOKEN_CFG } = require("../../../config");
-const BlacklistToken = require("../models/BlackListToken");
+const BlackListToken = require("../models/BlackListToken");
 
 const generateToken = (payload, type) => {
   if (!(type == "access" || type == "refresh")) {
@@ -29,7 +29,7 @@ checkToken = async (token, secretKey) => {
   try {
     const payload = jwt.verify(token, secretKey);
     if (
-      await BlacklistToken.findOne({
+      await BlackListToken.findOne({
         where: {
           token,
         },

@@ -6,7 +6,7 @@ const {
 const { TOKEN_CFG } = require("../../../config");
 const { AppError } = require("../helpers/error");
 const { checkToken } = require("../helpers/jwt");
-const BlacklistToken = require("../models/BlacklistToken");
+const BlackListToken = require("../models/BlackListToken");
 const User = require("../models/User");
 
 const extractTokenFromHeader = (headers) => {

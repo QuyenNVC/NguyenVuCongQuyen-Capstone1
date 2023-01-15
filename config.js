@@ -12,7 +12,7 @@ module.exports = {
       password: process.env.MYSQLPASSWORD,
     },
     redis: {
-      URL: encodeURI(process.env.REDIS_URL),
+      url: encodeURI(process.env.REDIS_URL),
     },
   },
   TOKEN_CFG: {

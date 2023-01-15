@@ -43,7 +43,7 @@ module.exports = {
       redirectUrl: process.env.REDIRECTURL,
     },
   },
-  LIMIT_IMAGES_QUERY: 12,
+  LIMIT_IMAGES_QUERY: 2,
   LIMIT_COMMENT_QUERY: 50,
   LIMIT_FEED_QUERY: 10,
 };

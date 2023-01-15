@@ -91,7 +91,7 @@ module.exports = {
   createImage: async (data, file, user) => {
     try {
       if (!data.name || !file) {
-        throw new AppError("Require title and image!");
+        throw new AppError(400, "Require title and image!");
       }
       data = { ...data, fileName: file.filename, userId: user.userId };
       const image = await Image.create(data);
